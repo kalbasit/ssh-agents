@@ -70,15 +70,13 @@ function start_ssh_agent() {
 		if grep -q 'PRIVATE KEY' "${key}" >/dev/null >&2; then
 			debug "adding the key ${key}"
 			chmod 0400 "${key}" >/dev/null 2>&1
+			set +e
 			if [[ -t 1 ]]; then
-				if ! ssh-add "${key}" >/dev/null 2>&1; then
-					>&2 echo "Failed to add the key ${key} to the agent"
-				fi
+				ssh-add "${key}" >/dev/null 2>&1
 			else
-				if ssh-add "${key}" </dev/null >/dev/null 2>&1; then
-					>&2 echo "Failed to add the key ${key} to the agent"
-				fi
+				ssh-add "${key}" </dev/null >/dev/null 2>&1
 			fi
+			set -e
 		fi
 	done
 }
