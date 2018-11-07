@@ -20,6 +20,12 @@ To use multi-SSH agents, start ssh agent with the `--name` flag. The
 given name is expected to be a folder under `~/.ssh/name` containing the
 keys to include in the agent.
 
+# Author
+
+| [![twitter/ylcodes](https://avatars0.githubusercontent.com/u/87115?v=3&s=128)](http://twitter.com/ylcodes "Follow @ylcodes on Twitter") |
+|---|
+| [Wael Nasreddine](https://github.com/kalbasit) |
+
 # License
 
 All source code is licensed under the [MIT License](LICENSE).
