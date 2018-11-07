@@ -20,6 +20,23 @@ To use multi-SSH agents, start ssh agent with the `--name` flag. The
 given name is expected to be a folder under `~/.ssh/name` containing the
 keys to include in the agent.
 
+# Installation
+
+Download the [ssh-agents](/bin/ssh-agents) file and place it somewhere
+in your PATH and do not forget to make it executable.
+
+# Usage
+
+Add the following snippet to your shell rc file, such as `~/.profile`,
+`~/.bashrc`, `~/.zshrc` or other similar files.
+
+```shell
+eval "$(ssh-agents)"
+```
+
+If you intend to use a different ssh agent name, pass the flag `--name`
+to the `ssh-agents` call within the eval.
+
 # Author
 
 | [![twitter/ylcodes](https://avatars0.githubusercontent.com/u/87115?v=3&s=128)](http://twitter.com/ylcodes "Follow @ylcodes on Twitter") |
