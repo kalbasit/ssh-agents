@@ -11,6 +11,9 @@ an SSH agent and caching the environment variables for later invocation.
 - Ability to have different keys in different agents for security
   purposes.
 
+Please note that encrypted SSH keys can only be added via `ssh-add`
+after having started the agent.
+
 # Multiple SSH agents
 
 To use multi-SSH agents, start ssh agent with the `--name` flag. The
