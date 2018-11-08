@@ -22,8 +22,9 @@ keys to include in the agent.
 
 # Installation
 
-Download the [ssh-agents](/bin/ssh-agents) file and place it somewhere
-in your PATH and do not forget to make it executable.
+Clone this repository and run `make PREFIX=/usr/local install` to
+install it or simply download the [ssh-agents](/bin/ssh-agents) file and
+place it somewhere in your PATH and do not forget to make it executable.
 
 # Usage
 
