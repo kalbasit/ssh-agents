@@ -71,11 +71,7 @@ function start_ssh_agent() {
 			debug "adding the key ${key}"
 			chmod 0400 "${key}" >/dev/null 2>&1
 			set +e
-			if [[ -t 1 ]]; then
-				ssh-add "${key}" >/dev/null 2>&1
-			else
-				ssh-add "${key}" </dev/null >/dev/null 2>&1
-			fi
+			ssh-add "${key}" </dev/null >/dev/null 2>&1
 			set -e
 		fi
 	done
@@ -114,11 +110,13 @@ function help() {
 
 	Start or load an already existing SSH agent. The default name is global and
 	the agent state will be saved at ${HOME}/.ssh/agent and all the keys directly
-	under ${HOME}/.ssh will be added automatically.
+	under ${HOME}/.ssh will be added automatically, provided they are not
+	encrypted!
 
 	Changing the SSH agent name with the flag -n or --name, would put the agent
 	under ${HOME}/.ssh/${SSH_AGENT_NAME}/agent and all the keys directly under
-	${HOME}/.ssh/${SSH_AGENT_NAME} will be added automatically.
+	${HOME}/.ssh/${SSH_AGENT_NAME} will be added automatically, provided they are
+	not encrypted!
 	EOD
 }
 
